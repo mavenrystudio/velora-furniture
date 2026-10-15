@@ -1,0 +1,40 @@
+{
+  "name": "velora-commerce",
+  "private": true,
+  "version": "1.0.0",
+  "engines": { "node": ">=20.19.0" },
+  "type": "module",
+  "scripts": {
+    "dev": "concurrently -k \"npm:dev:api\" \"npm:dev:web\"",
+    "dev:web": "vite --host 0.0.0.0",
+    "dev:api": "tsx watch server/index.ts",
+    "build": "tsc -b && vite build && tsc -p server/tsconfig.json",
+    "start": "node dist/server/index.js",
+    "preview": "vite preview --host 0.0.0.0"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.49.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^5.1.0",
+    "framer-motion": "^12.4.7",
+    "lucide-react": "^0.468.0",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
+    "react-router-dom": "^7.1.5",
+    "stripe": "^17.5.0",
+    "zod": "^3.24.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^6.1.2",
+    "@types/cors": "^2.8.17",
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.13.4",
+    "@types/react": "^19.0.8",
+    "@types/react-dom": "^19.0.3",
+    "concurrently": "^9.1.2",
+    "tsx": "^4.19.3",
+    "typescript": "~5.7.3",
+    "vite": "^8.2.2"
+  }
+}
